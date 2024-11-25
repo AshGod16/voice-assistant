@@ -52,7 +52,7 @@ graph TD
     F --> C
 
     %% Style
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px
+    classDef default stroke:#333,stroke-width:2px
     classDef node text-align:center
     class A,B,C,D,E,F node
 ```

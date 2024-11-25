@@ -48,7 +48,7 @@ pip install SpeechRecognition pyttsx3 transformers torch pyaudio tqdm
 1. Clone the repository
 2. Run the assistant:
 ```bash
-python voice_assistant.py
+python assistant.py
 ```
 
 3. Speak commands when "Listening..." appears

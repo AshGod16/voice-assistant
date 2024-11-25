@@ -37,6 +37,7 @@ class VoiceAssistant:
         print("Initialization complete!")
 
     def download_progress(self, current, total):
+        # Provide downloading status via tqdm
         if self.progress_bar is None:
             self.progress_bar = tqdm(total=total, unit='iB', unit_scale=True)
         self.progress_bar.update(current - self.progress_bar.n)
@@ -45,6 +46,7 @@ class VoiceAssistant:
             self.progress_bar = None
 
     def listen(self):
+        # Interfacing with speech-to-text
         with sr.Microphone() as source:
             print("\nListening...")
             self.recognizer.adjust_for_ambient_noise(source)
@@ -62,6 +64,7 @@ class VoiceAssistant:
             return None
 
     def classify_intent(self, text):
+        # Intent classification to determine appropriate response
         if not text:
             return None
         candidate_labels = list(self.intents.keys())
@@ -74,6 +77,7 @@ class VoiceAssistant:
         self.speaker.runAndWait()
 
     def handle_intent(self, intent, text):
+        # Intent Handling
         if intent == "greeting":
             current_hour = datetime.datetime.now().hour
             if 5 <= current_hour < 12:

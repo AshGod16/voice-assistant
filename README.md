@@ -45,7 +45,7 @@ pip install SpeechRecognition pyttsx3 transformers torch pyaudio tqdm
 graph TD
     A[Start Assistant] --> B[Initialize NLP Model]
     B --> C[Listen for Voice]
-    C --> D{Understand Command?}
+    C --> D{Understand<br/>Command?}
     D -->|Yes| E[Process Intent]
     D -->|No| C
     E --> F[Execute Command]

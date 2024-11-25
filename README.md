@@ -1,118 +1,121 @@
-# Voice Assistant with NLP
+# 🎤 Voice Assistant with NLP
 
-A Python-based voice assistant that uses natural language processing for intent classification and speech recognition for voice commands.
+A Python-based voice assistant using natural language processing for intelligent voice commands. 🤖
 
-## Features
+## ✨ Features
 
-- Voice input/output capabilities
-- NLP-based intent classification
-- Basic command handling:
-  - Greetings
-  - Time queries
-  - Web searches
-  - Weather information (placeholder)
-  - Music control (placeholder)
+- 🗣️ Voice input/output capabilities  
+- 🧠 NLP-based intent classification
+- 💡 Command handling:
+  - 👋 Greetings
+  - ⏰ Time queries
+  - 🔍 Web searches
+  - 🌤️ Weather info (placeholder)
+  - 🎵 Music control (placeholder)
 
-## Prerequisites
+## 📋 Prerequisites
 
-- Python 3.7+
-- PortAudio
-- Working microphone
+- 🐍 Python 3.7+
+- 🔊 PortAudio
+- 🎙️ Working microphone
 
-## Installation
+## 🚀 Installation
 
 ### 1. Install PortAudio
-
-**macOS:**
 ```bash
+# macOS 🍎
 brew install portaudio
-```
 
-**Linux:**
-```bash
+# Linux 🐧
 sudo apt-get install portaudio19-dev  # Ubuntu/Debian
 sudo dnf install portaudio-devel      # Fedora
+
+# Windows 🪟
+# Download PyAudio wheel from unofficial binaries
 ```
 
-**Windows:**
-Download and install PyAudio wheel from unofficial binaries.
-
-### 2. Install Python Dependencies
-
+### 2. Install Dependencies
 ```bash
 pip install SpeechRecognition pyttsx3 transformers torch pyaudio tqdm
 ```
 
-## Usage
+## 🎯 Usage
 
-1. Clone the repository
-2. Run the assistant:
+```mermaid
+graph TD
+    A[Start Assistant] --> B[Initialize NLP Model]
+    B --> C[Listen for Voice]
+    C --> D{Understand Command?}
+    D -->|Yes| E[Process Intent]
+    D -->|No| C
+    E --> F[Execute Command]
+    F --> C
+```
+
+1. Start the assistant:
 ```bash
 python assistant.py
 ```
 
-3. Speak commands when "Listening..." appears
-
-Example commands:
-- "What time is it?"
-- "Search for weather forecast"
-- "Hello"
-
-## Configuration
-
-Models are cached in `~/.voice_assistant_cache` to prevent repeated downloads.
-
-## Troubleshooting
-
-### Microphone Permissions
-
-**macOS:**
-- System Settings → Privacy & Security → Microphone
-- Enable for Terminal/IDE
-
-**Windows:**
-- Settings → Privacy → Microphone
-- Enable "Allow apps to access your microphone"
-
-**Linux:**
-```bash
-sudo usermod -a -G audio $USER
+2. Try these commands:
 ```
-Log out and back in.
+🕐 "What time is it?"
+🔍 "Search for weather forecast"
+👋 "Hello"
+```
 
-### Common Errors
+## ⚙️ Configuration
 
-1. "Could not understand audio"
-   - Check microphone connection
-   - Speak clearly and closer to microphone
+Models cached in: `~/.voice_assistant_cache` 
+```
+📁 .voice_assistant_cache/
+ ┣ 📂 models/
+ ┃ ┗ 📂 bart-large-mnli/
+ ┣ 📂 tokenizers/
+ ┗ 📂 configs/
+```
 
-2. "Could not request results"
-   - Verify internet connection
-   - Check microphone permissions
+## 🔧 Troubleshooting
 
-## Extending Functionality
+### 🎙️ Microphone Setup
+| OS | Path to Settings |
+|------|-----------------|
+| macOS | System Settings → Privacy & Security → Microphone |
+| Windows | Settings → Privacy → Microphone |
+| Linux | `sudo usermod -a -G audio $USER` |
 
-Add new intents in the `intents` dictionary:
+### ❗ Common Errors
+```
+🔴 "Could not understand audio"
+   ↳ Check microphone connection
+   ↳ Speak clearly
+
+🔴 "Could not request results"
+   ↳ Check internet
+   ↳ Verify permissions
+```
+
+## 🛠️ Extending
+
+Add intents:
 ```python
 self.intents = {
-    "new_intent": ["keyword1", "keyword2"]
+    "new_intent": ["keyword1", "keyword2"] # ✨
 }
 ```
 
-Implement corresponding handler in `handle_intent()`.
+## 📄 License
 
-## License
+MIT ⚖️
 
-MIT
+## 🤝 Contributing
 
-## Contributing
+1. 🔄 Fork
+2. 🌱 Branch
+3. ⬆️ Pull Request
 
-1. Fork the repository
-2. Create feature branch
-3. Submit pull request
+## 🙏 Acknowledgments
 
-## Acknowledgments
-
-- HuggingFace Transformers
-- SpeechRecognition
-- PyTTSx3
+- 🤗 HuggingFace Transformers
+- 🎤 SpeechRecognition
+- 🗣️ PyTTSx3
